@@ -7,6 +7,7 @@ import juliariccimd from './markdown/julia_ricci.md';
 import {useEffect, useState} from "react";
 import jakeross from "../../img/staff/jake_ross.png";
 import juliaricci from "../../img/staff/julia_ricci.png";
+import {getAPI} from "../../api";
 
 
 const STAFF = {jake_ross:
@@ -21,26 +22,28 @@ const STAFF = {jake_ross:
 }
 
 export default function StaffDetail(){
-    const {key} = useParams();
-    const [md, setMd] = useState('');
-    const [p, setP] = useState({name:'', description: '', image: ''});
+    const {slug} = useParams();
+    const [p, setP] = useState({name:'',
+        description: '',
+        image: '',
+        bio: ''});
 
     useEffect(() => {
         // fetch user info via api
-        console.log('key', key, STAFF, STAFF[key])
-        setP(STAFF[key]);
+        console.log('key', slug, STAFF, STAFF[slug])
 
-        //fetch markdown
-        fetch(STAFF[key].markdown)
-            .then(res => res.text())
-            .then(text => setMd(text))
+        getAPI(`staff/${slug}`).then(
+            (data) => {
+                setP(data)
+            }
+        )
     }, []);
 
     return (
         <div>
             <h1>{p.name} - {p.description}</h1>
             <img src={p.image} alt={p.name} />
-            <Markdown>{md}</Markdown>
+            <Markdown>{p.bio}</Markdown>
         </div>
     )
 }

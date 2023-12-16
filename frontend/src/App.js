@@ -64,7 +64,7 @@ function App() {
                         <Route path="/labs" element={<Labs />}/>
                         <Route path="/data" element={<Data />}/>
                         <Route path="/map" element={<MapComponent />} />
-                        <Route path="/staff/:key" element={<StaffDetail />}/>
+                        <Route path="/staff/:slug" element={<StaffDetail />}/>
                         <Route path="/labs/nmgrl" element={<NMGRL />} />
 
                         {/*<Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}/>*/}

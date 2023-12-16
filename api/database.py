@@ -17,6 +17,7 @@ from sqlalchemy import create_engine, Column, String
 from sqlalchemy.orm import sessionmaker, declarative_base, declared_attr
 from sqlmodel import Session, SQLModel
 
+from defaults import JAKEROSSBIO, JULIARICCIBIO
 from settings import settings
 print(settings.SQLALCHEMY_DATABASE_URL)
 engine = create_engine(settings.SQLALCHEMY_DATABASE_URL)
@@ -38,8 +39,8 @@ def reset_database():
     with Session(engine) as session:
         session.add_all(
             [
-                Staff(slug="jake_ross", name="Jake Ross"),
-                Staff(slug="julia_ricci", name="Julia Ricci"),
+                Staff(slug="jake_ross", name="Jake Ross", bio=JAKEROSSBIO),
+                Staff(slug="julia_ricci", name="Julia Ricci", bio=JULIARICCIBIO),
             ]
         )
         session.commit()
