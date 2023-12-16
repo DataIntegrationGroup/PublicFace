@@ -44,11 +44,12 @@ function AppNavbar() {
         ],
         // command: () => {window.location.href = '/labs'}
     }
+
     const staff= {label: 'Staff', icon: 'pi pi-fw pi-user', command: () => {window.location.href = '/staff'}}
     const store = {label: 'Store', icon: 'pi pi-fw pi-shopping-cart', command: () => {window.location.href = '/store'}}
     const data = {label: 'Data', icon: 'pi pi-fw pi-database', command: () => {window.location.href = '/data'}}
     const map= {label: 'Map', icon: 'pi pi-fw pi-map', command: () => {window.location.href = '/map'}}
-    // const documentation= {label: 'Docs', icon: 'pi pi-fw pi-question-circle', command: () => {window.location.href = '/docs'}}
+    const aboutus= {label: 'About Us', icon: 'pi pi-fw pi-question-circle', command: () => {window.location.href = '/aboutus'}}
 
     var loginout;
     if (isAuthenticated && userinfo){
@@ -62,6 +63,7 @@ function AppNavbar() {
     }
     const items = [
         home,
+        aboutus,
         labs,
         staff,
         store,

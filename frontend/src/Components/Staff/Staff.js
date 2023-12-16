@@ -113,7 +113,7 @@ export default function Staff(){
                     {/*    optionLabel="label" placeholder="Sort By Price"*/}
                     {/*    // onChange={onSortChange}*/}
                     {/*/>*/}
-                    <h4>Staff List</h4>
+                    <h4>Staff {layout[0].toUpperCase()+layout.substring(1).toLowerCase()}</h4>
                 </div>
                 <div className="col-6" style={{textAlign: 'right'}}>
                     <DataViewLayoutOptions layout={layout}

@@ -46,6 +46,7 @@ import StaffDetail from "./Components/Staff/Detail";
 import NMGRL from "./Components/Labs/NMGRL";
 import Data from "./Components/Data/Data";
 import MapComponent from "./Components/Map/Map";
+import AboutUs from "./Components/AboutUs/AboutUs";
 
 function App() {
     return (
@@ -60,6 +61,7 @@ function App() {
                         <Route path="/" element={<Home />}/>
                         <Route path="/callback" element={<Callback />} />
                         <Route path="/staff" element={<Staff />}/>
+                        <Route path="/aboutus" element={<AboutUs />}/>
                         <Route path="/store" element={<Store />}/>
                         <Route path="/labs" element={<Labs />}/>
                         <Route path="/data" element={<Data />}/>
