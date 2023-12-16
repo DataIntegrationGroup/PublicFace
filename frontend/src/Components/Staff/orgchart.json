@@ -1,0 +1,86 @@
+[
+  {
+    "label": "Director",
+    "data": {
+      "name": "Mike Timmons",
+      "avatar": "walter.jpg"
+    },
+    "children": [
+      {
+        "label": "CTO",
+        "data": {
+          "name": "Jake Ross",
+          "avatar": "saul.png"
+        },
+        "children": [
+          {
+            "label": "Water Data Specialist",
+            "data": {
+              "name": "Chris Cox",
+              "avatar": "saul.png"
+            }
+          },
+          {
+            "label": "Water Data Specialist- Frontend developer",
+            "data": {
+              "name": "Ashish Kodam",
+              "avatar": "saul.png"
+            }
+          }
+        ]
+      },
+      {"label":  "Associate Director of Finance",
+      "data": {
+        "name": "Valentia Avramidi",
+        "avatar": "saul.png"
+        }
+      },
+      {
+        "label": "Associate Director of Hydrology",
+        "data": {
+          "name": "Stacy Timmons",
+          "avatar": "saul.png"
+        },
+        "children": [
+          {
+            "label": "Water Data Program Manager",
+            "data": {
+              "name": "Rachel Hobbs",
+              "avatar": "saul.png"
+            },
+            "children": [
+              {
+                "label": "Water Data Specialist - Data Integration",
+                "data": {
+                  "name": "Jacob Brown",
+                  "avatar": "saul.png"
+                }
+              }
+            ]
+          },
+          {
+            "label": "Water Education Program Manager",
+            "data": {
+              "name": "Kate Leary",
+              "avatar": "saul.png"
+            }
+          },
+          {
+            "label": "Aquifer Mapping Program Manager",
+            "data": {
+              "name": "Laila Sturgis",
+              "avatar": "saul.png"
+            }
+          }
+        ]
+      },
+      {
+        "label": "State Map Program Manager",
+        "data": {
+          "name": "Matt Zimmerer",
+          "avatar": "saul.png"
+        }
+      }
+    ]
+  }
+]

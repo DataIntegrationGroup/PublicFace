@@ -15,35 +15,26 @@
 // ===============================================================================
 
 import {OrganizationChart} from "primereact/organizationchart";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import orgchart from './orgchart.json'
+import {Panel} from "primereact/panel";
 
 
-const cfo = {
-    label: 'CFO',
-    type: 'person',
-    className: 'p-person',
-    expanded: true,
-    data: { name: 'Kate White', 'avatar': 'kate.png' },
-}
-const cto = {
-    label: 'CTO',
-    type: 'person',
-    className: 'p-person',
-    expanded: true,
-    data: { name: 'Saul Goodman', 'avatar': 'saul.png' },
-}
-const data =[
-    {
-        label: 'CEO',
-        type: 'person',
-        className: 'p-person',
-        expanded: true,
-        data: { name: 'Walter White', 'avatar': 'walter.jpg' },
-        children: [
-            cfo, cto
-        ]
+const toperson = (n) => {
+    n.expanded = true
+    n.type = 'person'
+    n.className = 'p-person'
+    if (n.children){
+        n.children = n.children.map((c) => {
+            return toperson(c)
+        })
     }
-]
+    return n
+}
+const data =  orgchart.map((n) => {
+   return toperson(n)
+})
+
 export default function Organization(){
     const [selection, setSelection] = useState([]);
 
@@ -63,11 +54,14 @@ export default function Organization(){
         return node.label;
     }
 
+
     return (
         <div>
-            <h1>Organization</h1>
-            <OrganizationChart value={data} nodeTemplate={nodeTemplate} selection={selection} selectionMode="multiple"
-                               onSelectionChange={event => setSelection(event.data)} className="company"></OrganizationChart>
+            <Panel header={'Organization Chart'}>
+                <OrganizationChart value={data} nodeTemplate={nodeTemplate} selection={selection} selectionMode="multiple"
+                                   onSelectionChange={event => setSelection(event.data)} className="company"></OrganizationChart>
+            </Panel>
+
         </div>
     )
 }
