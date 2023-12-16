@@ -1,0 +1,19 @@
+fastapi>=0.105.0
+sqlmodel>=0.0.14
+sqlalchemy
+# geoalchemy2[shapely]
+uvicorn
+psycopg
+# scikit-learn
+# pyproj
+# jinja2
+# requests
+# numpy
+# python-jose[cryptography]
+# pandas
+# openpyxl
+# uncertainties
+# jsbeautifier
+# plotly
+
+
